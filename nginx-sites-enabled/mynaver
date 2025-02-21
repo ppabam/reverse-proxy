@@ -1,0 +1,16 @@
+server {
+    listen 80;
+    
+    server_name mynaver.com;
+
+    location /
+    {
+	proxy_pass http://localhost:8001;
+    }
+
+    location /pyweb2
+    {
+	proxy_pass http://localhost:8002/;
+    }
+
+}
