@@ -1,0 +1,18 @@
+upstream pywebs{
+	server localhost:8001;
+	server localhost:8002;
+}
+
+server {
+    listen 80;
+
+    location /
+    {
+		proxy_pass http://pywebs;
+	}	
+    
+	location /pyweb2
+    {
+		proxy_pass http://localhost:8002/;
+	}	
+}
