@@ -45,6 +45,24 @@ $ java -jar ngrinder-controller-3.5.9-p1.war
 $ run_agent.sh
 ```
 
+## Docker
+```bash
+$ docker compose up -d  # 백그라운드에서 컨테이너 실행
+$ docker compose down   # 컨테이너 중지 및 네트워크 제거
+$ docker compose stop   # 컨테이너 중지
+$ docker compose start  # 중지된 컨테이너 다시 시작
+$ docker compose restart  # 컨테이너 재시작
+$ docker compose down  # 컨테이너, 네트워크 제거
+$ sudo docker compose stats # 성능 모니터링
+
+# scale out
+$ sudo docker compose up -d --scale web1=3
+```
+
+```bash
+$ sudo docker exec -it <LB_NAME> bash
+$ nginx -s reload
+```
 
 
 

@@ -1,6 +1,6 @@
 upstream pywebs{
-	server localhost:8001;
-	server localhost:8002;
+    server localhost:8001;
+    server localhost:8002;
 }
 
 server {
@@ -8,11 +8,19 @@ server {
 
     location /
     {
-		proxy_pass http://pywebs;
-	}	
+	proxy_pass http://pywebs;
+    }	
     
-	location /pyweb2
+    location /pyweb2
     {
-		proxy_pass http://localhost:8002/;
-	}	
+	proxy_pass http://localhost:8002/;
+    }
+
+    location /blog
+    {
+        #proxy_pass http://localhost:8002/;
+    	alias /var/www/blog/;
+	#index index.html;
+	#autoindex on;
+    }
 }
