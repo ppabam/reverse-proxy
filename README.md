@@ -54,9 +54,9 @@ $ docker compose start  # 중지된 컨테이너 다시 시작
 $ docker compose restart  # 컨테이너 재시작
 $ docker compose down  # 컨테이너, 네트워크 제거
 $ sudo docker compose stats # 성능 모니터링
-
-# scale out
-$ sudo docker compose up -d --scale web1=3
+$ sudo docker compose up -d --scale web1=3 # scale out
+$ sudo docker compose logs -f api # 로그확인
+$ sudo docker compose up -d --build api # 특정 컨테이너 다시 빌드하여 띄우기
 ```
 
 ## nginx
