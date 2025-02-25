@@ -71,6 +71,18 @@ $ nginx -s reload
 $ fastapi dev main.py
 ```
 
+## PDM to requirements.txt
+```bash
+$ pdm export -o requirements.txt --without-hashes
+```
+
+## Docker build & push & pull run
+```bash
+$ sudo docker build -t sawyertom/api:6.1.0 -f docker/fastapi/Dockerfile .
+$ sudo docker login
+$ sudo docker push sawyertom/api:6.1.0
+$ sudo docker run -d --name api610 -p 8610:80 sawyertom/api:6.1.0
+```
 
 
 
