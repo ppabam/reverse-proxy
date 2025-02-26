@@ -7,7 +7,8 @@ import numpy as np
 app = FastAPI()
 
 # 상수
-N = 10**6  # 100만 개 요소
+N = 10**4  # 100만 개 요소
+N = 10_000
 
 @app.get("/")
 def read_root():
