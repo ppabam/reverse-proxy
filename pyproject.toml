@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "ppabam", email = "tom@diginori.com"},
 ]
-dependencies = ["fastapi[standard]>=0.115.8", "numpy>=2.2.3", "pandas>=2.2.3", "jupyterlab>=4.3.5"]
+dependencies = ["fastapi[standard]>=0.115.8", "numpy>=2.2.3", "pandas>=2.2.3", "jupyterlab>=4.3.5", "matplotlib>=3.10.0"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
