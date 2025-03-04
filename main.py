@@ -71,7 +71,7 @@ def gen_r_array_randint(N):
 def gen_r_array_choices(N):
     a = random.choices(range(101), k=N)
     b = random.choices(range(101), k=N)
-    return a,b
+    return a, b
 
 def gen_r_array_numpy(N):
     a = np.random.randint(1, 101, size=N)  # 1 이상 100 이하의 정수
@@ -106,9 +106,6 @@ def add_arrays(N, fun, fun_plus):
     array_creation_time = end_creation_time - start_creation_time
     addition_time = add_end_time - add_start_time
     return array_creation_time, addition_time
-
-
-
 
 
 @app.get("/items/{item_id}")
