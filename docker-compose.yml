@@ -62,3 +62,22 @@ services:
   #       limits:
   #         cpus: "1.05"
   #         memory: "20M"
+  prometheus:
+      image: prom/prometheus:v3.2.1
+      container_name: prometheus
+      volumes:
+        - ./conf/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      ports:
+        - "9090:9090"
+      depends_on:
+        - lb
+
+  grafana:
+    image: grafana/grafana:11.5.2-ubuntu
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
